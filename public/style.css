@@ -1,0 +1,452 @@
+
+/* ===== Global Styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #30251f;
+  background: #faf7f2;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ===== Header and Navigation ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 18px 7%;
+  background: rgba(255, 255, 255, 0.96);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid #eee3d7;
+  box-shadow: 0 3px 15px rgba(48, 37, 31, 0.04);
+}
+
+header h1 {
+  margin: 0;
+  color: #80583f;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #30251f;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #a66b45;
+}
+
+/* ===== Main Layout ===== */
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 32px 24px 60px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  padding: 90px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #eadbca, #f4e9dc);
+  border-radius: 18px;
+  margin-bottom: 35px;
+}
+
+.hero h2 {
+  max-width: 750px;
+  margin: 0 auto 18px;
+  color: #493326;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.2;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #685447;
+  font-size: 17px;
+}
+
+/* ===== General Sections ===== */
+section:not(.hero) {
+  padding: 40px 10px;
+}
+
+section:not(.hero) > h2 {
+  margin: 0 0 10px;
+  color: #493326;
+  font-family: Georgia, serif;
+  font-size: 32px;
+}
+
+section:not(.hero) > p {
+  color: #75665b;
+}
+
+/* ===== Painting Gallery ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 28px;
+}
+
+/* ===== Painting Cards ===== */
+.painting-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #eee4da;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(48, 37, 31, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.painting-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(48, 37, 31, 0.13);
+}
+
+.painting-card img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background: #eee4da;
+}
+
+.painting-card h3 {
+  margin: 18px 18px 6px;
+  color: #493326;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.painting-card p {
+  margin: 8px 18px;
+  color: #75665b;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.painting-card .painting-price {
+  margin-top: 14px;
+  color: #80583f;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.painting-card .painting-status {
+  display: inline-block;
+  margin: 10px 18px 20px;
+  padding: 5px 12px;
+  color: #326443;
+  background: #e6f2e8;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.painting-card .painting-status:where(:not(:empty)) {
+  line-height: 1.5;
+}
+
+/* ===== Wall Booking and Pottery ===== */
+#wall-booking,
+#pottery {
+  margin-top: 20px;
+  padding: 32px !important;
+  background: #f0e7dc;
+  border-radius: 14px;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 25px 20px;
+  text-align: center;
+  background: #30251f;
+  color: #fff;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  header {
+    padding: 16px 5%;
+  }
+
+  nav {
+    gap: 16px;
+  }
+
+  .painting-card img {
+    height: 240px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+  header {
+    position: static;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    gap: 12px 18px;
+  }
+
+  main {
+    padding: 20px 14px 40px;
+  }
+
+  .hero {
+    padding: 55px 18px;
+    border-radius: 12px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  section:not(.hero) {
+    padding: 28px 4px;
+  }
+
+  section:not(.hero) > h2 {
+    font-size: 28px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .painting-card img {
+    height: 280px;
+  }
+
+  #wall-booking,
+  #pottery {
+    padding: 24px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+/* ===== Painting Search and Filters ===== */
+
+.gallery-controls {
+  display: grid;
+  grid-template-columns: minmax(200px, 2fr) minmax(150px, 1fr) minmax(170px, 1fr);
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.gallery-controls input,
+.gallery-controls select {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #ddcbbb;
+  border-radius: 9px;
+  background: #fff;
+  color: #30251f;
+  font: inherit;
+  outline: none;
+}
+
+.gallery-controls input:focus,
+.gallery-controls select:focus {
+  border-color: #a66b45;
+  box-shadow: 0 0 0 3px rgba(166, 107, 69, 0.12);
+}
+
+#paintingCount {
+  margin: 18px 0;
+  font-size: 14px;
+  color: #75665b;
+}
+
+.painting-card .painting-status.sold {
+  color: #8a3434;
+  background: #f8e5e3;
+}
+
+@media (max-width: 700px) {
+  .gallery-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Wall Booking Form ===== */
+
+.booking-form {
+  max-width: 650px;
+  margin-top: 28px;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #eee4da;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(48, 37, 31, 0.06);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: #493326;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddcbbb;
+  border-radius: 8px;
+  background: #fffdfb;
+  color: #30251f;
+  font: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 2px solid #a66b45;
+  outline-offset: 2px;
+}
+
+.booking-form button {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #80583f;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.booking-form button:hover {
+  background: #63432f;
+}
+
+.booking-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+#bookingMessageStatus {
+  margin-bottom: 0;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .booking-form {
+    padding: 20px;
+  }
+}
+
+/* Add Painting form layout */
+#addPaintingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 16px;
+}
+
+#addPaintingForm label {
+  display: block;
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+#addPaintingForm input,
+#addPaintingForm textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  margin: 0;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#addPaintingForm textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#addPaintingForm button {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+#addPaintingMessage {
+  margin: 0;
+}
